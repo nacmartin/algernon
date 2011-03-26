@@ -25,12 +25,36 @@ class Card
     protected $question;
 
     /**
-     * @orm:Column(type="string", length="255", nullable=true)
+     * @orm:Column(type="string", length="255")
      */
     protected $answer;
 
+    /**
+     * @orm:Column(type="integer")
+     */
+    protected $asked;
+
+    /**
+     * @orm:Column(type="integer")
+     */
+    protected $failed;
+
+    /**
+     * @orm:Column(type="integer")
+     */
+    protected $level;
+
+    /**
+     * @orm:Column(type="integer")
+     */
+    protected $nextSession;
+
     public function __construct()
     {
+      $this->asked = 0;
+      $this->failed = 0;
+      $this->level = 0;
+      $this->nextSession = 0;
     }
 
     /**
@@ -81,6 +105,86 @@ class Card
     public function getAnswer()
     {
         return $this->answer;
+    }
+
+    /**
+     * Set asked
+     *
+     * @param integer $asked
+     */
+    public function setAsked($asked)
+    {
+        $this->asked = $asked;
+    }
+
+    /**
+     * Get asked
+     *
+     * @return integer $asked
+     */
+    public function getAsked()
+    {
+        return $this->asked;
+    }
+
+    /**
+     * Set failed
+     *
+     * @param integer $failed
+     */
+    public function setFailed($failed)
+    {
+        $this->failed = $failed;
+    }
+
+    /**
+     * Get failed
+     *
+     * @return integer $failed
+     */
+    public function getFailed()
+    {
+        return $this->failed;
+    }
+
+    /**
+     * Set level
+     *
+     * @param integer $level
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    /**
+     * Get level
+     *
+     * @return integer $level
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * Set nextSession
+     *
+     * @param integer $nextSession
+     */
+    public function setNextSession($nextSession)
+    {
+        $this->nextSession = $nextSession;
+    }
+
+    /**
+     * Get nextSession
+     *
+     * @return integer $nextSession
+     */
+    public function getNextSession()
+    {
+        return $this->nextSession;
     }
 
     /**

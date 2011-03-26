@@ -4,12 +4,18 @@ namespace Algernon\LeitnerBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface,
     Algernon\LeitnerBundle\Entity\Card,
-    Algernon\LeitnerBundle\Entity\Deck;
+    Algernon\LeitnerBundle\Entity\Deck,
+    Algernon\LeitnerBundle\Entity\Session;
 
 class CardFixtures implements FixtureInterface
 {
     public function load($em)
     {
+
+        $session = new Session();
+        $session->setCurrentSession(0);
+        $em->persist($session);
+
         $deck = new Deck();
         $deck->setName('Deutsch - Español');
 
