@@ -1,0 +1,11 @@
+_homepage:
+    resource: "@AlgernonLeinterBundle/Controller/DefaultController.php"
+    type:     annotation
+
+fos_user_security:
+    resource: @FOSUserBundle/Resources/config/routing/security.xml
+
+fos_user_user:
+    resource: @FOSUserBundle/Resources/config/routing/user.xml
+    prefix: /user
+
