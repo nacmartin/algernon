@@ -1,1 +1,37 @@
-Hello!
+{% extends 'AlgernonLeitnerBundle::layout.html.twig' %}
+
+{% block content %}
+<div id="session">
+Session {{session}}
+</div>
+<div id="question">
+</div>
+<div id="answer">
+</div>
+<div id="right">
+</div>
+<div id="wrong">
+</div>
+<dif id="feed">
+Insert 10 more questions in the pool
+</div>
+<dif id="stats">
+</div>
+
+<script>
+window.addEvent('domready', function(){
+    new Asker({
+        questions:[
+            {% for card in cards %}
+                { question: '{{card.question}}',
+                  answer:   '{{card.answer}}',
+                  level:    {{card.level}},
+                  id:       {{card.id}}
+                },
+            {% endfor %}
+        ],
+        urlUpgrade: "{{path('_upgrade')}}"
+    })
+});
+</script>
+{% endblock %}
