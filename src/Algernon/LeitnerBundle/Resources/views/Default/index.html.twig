@@ -2,10 +2,15 @@
 
 {% block content %}
 <div id="session">
-Session {{session}}
+Session: <span id="sessionnumber">{{session}}</span>
 </div>
-Questions remaining <span id="remaining"></span>.
-Never asked <span id="pool"></span>.
+<div id="status">
+Questions remaining: <span id="remaining"></span><br/>
+Never asked: <span id="pool"></span>
+</div>
+<div id="feed">
+Insert 10 more questions in the pool
+</div>
 <div id="question">
 </div>
 <div id="showanswer">
@@ -13,17 +18,16 @@ Show answer
 </div>
 <div id="answer">
 </div>
-<div id="right">
-Right?
+<div id="result">
+    <span id="right">
+    Right?
+    </span>
+    <span id="wrong">
+    Wrong?
+    </span>
 </div>
-<div id="wrong">
-Wrong?
-</div>
-<dif id="feed">
-Insert 10 more questions in the pool
-</div>
-<dif id="endSession">
-    <a href="{{ path('endSession') }}">Home</a>
+<div id="endSession">
+    <a href="{{ path('endSession') }}">End session</a>
 </div>
 <dif id="stats">
 </div>

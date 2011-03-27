@@ -4,12 +4,14 @@ namespace Algernon\LeitnerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     Symfony\Component\HttpFoundation\Response,
-    Algernon\LeitnerBundle\Entity;
+    Algernon\LeitnerBundle\Entity,
+    Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 class DefaultController extends Controller
 {
     /**
-     * @extra:Route("/", name="_homepage")
+     * @extra:Route("/", name="homepage")
      * @extra:Template()
      */
 
@@ -98,7 +100,7 @@ class DefaultController extends Controller
 
         $card = $em->find('Algernon\LeitnerBundle\Entity\Card', $card_id);
         $card->setLevel(1);
-        $card->setNextSession($cs);
+        $card->setNextSession($cs + 1);
         $em->persist($card);
         $em->flush();
         return new Response('<html><body>Ok</body></html>');
@@ -110,5 +112,14 @@ class DefaultController extends Controller
 
     public function endSession()
     {
+        $em = $this->get('doctrine.orm.entity_manager');
+
+        $query = $em->createQuery('SELECT u FROM Algernon\LeitnerBundle\Entity\Session u');
+        $currentSession = $query->getSingleResult();
+        $currentSession->setCurrentSession($currentSession->getCurrentSession() + 1);
+        $em->persist($currentSession);
+        $em->flush();
+        return new RedirectResponse($this->generateUrl('homepage'));
+
     }
 }

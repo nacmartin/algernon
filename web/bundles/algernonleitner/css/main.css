@@ -1,0 +1,146 @@
+html{
+  background: url("img/bg.png") repeat scroll 0 0 #081c00;
+}
+
+body{
+  font-family: 'Cabin', arial, serif;
+  color: #fff;
+}
+
+#wrapper{
+  width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+#content{
+  height: 400px;
+  background-color: #eee;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin: 20px 0;
+  padding: 30px;
+  color: #222;
+}
+#session{
+  float: left;
+}
+#status{
+  float: right;
+  text-align: right;
+}
+
+#question{
+  clear: both;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  width: 600px;
+  margin: 15px auto;
+  border: 2px solid #ccc;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #222;
+  font-size: 36px;
+}
+#answer{
+  clear: both;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  width: 600px;
+  margin: 15px auto;
+  border: 2px solid #ccc;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #222;
+  font-size: 36px;
+}
+
+#showanswer{
+  cursor: pointer;
+  border: 2px solid #ccc;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #d7eef4;
+  color: #222;
+  margin: 15px auto;
+  padding: 8px;
+  width: 200px;
+}
+
+#result{
+  width: 640px;
+  margin: 0 auto;
+  height: 40px;
+}
+
+#right{
+  cursor: pointer;
+  border: 2px solid #ccc;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #d7f4d7;
+  text-align: center;
+  float:right;
+  color: #222;
+  margin: 0 auto;
+  padding: 8px;
+  width: 200px;
+}
+
+#wrong{
+  cursor: pointer;
+  border: 2px solid #ccc;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #f4d7d7;
+  text-align: center;
+  float:left;
+  color: #222;
+  margin: 0 auto;
+  padding: 8px;
+  width: 200px;
+}
+
+#sessionnumber{
+  font-size: 24px;
+}
+#remaining{
+  font-size: 24px;
+}
+#pool{
+  font-size: 24px;
+}
+
+#header{
+  font-size: 48px;
+}
+
+#feed{
+  cursor: pointer;
+  border: 2px solid #cce;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ddf;
+  color: #333;
+  width: 300px;
+  margin: 15px auto;
+  padding: 10px;
+}
+
+#endSession{
+  cursor: pointer;
+  border: 2px solid #cce;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ddf;
+  color: #333;
+  width: 300px;
+  margin: 15px auto;
+  padding: 10px;
+}
+
+
+#endSession a{
+  color: #333;
+}

@@ -21,6 +21,9 @@ var Asker = new Class({
         $('right').addEvent('click',this.rightAnswer.bind(this));
         $('wrong').addEvent('click',this.wrongAnswer.bind(this));
         this.showRemaining();
+        $('answer').hide();
+        $('right').hide();
+        $('wrong').hide();
     },
     showQuestion: function(){
         var askable = this.options.questions.filter(function(question){return (question.level !== 0);});
@@ -31,6 +34,9 @@ var Asker = new Class({
             $('answer').hide();
             $('right').hide();
             $('wrong').hide();
+        }else{
+            $('question').hide();
+            $('showanswer').hide();
         }
     },
     showRemaining: function(){
@@ -38,6 +44,11 @@ var Asker = new Class({
         var remaining = askable.length;
         $('remaining').set('text', remaining);
         $('pool').set('text', this.options.questions.length - remaining);
+        if(remaining === 0){
+            $('endSession').show();
+        }else{
+            $('endSession').hide();
+        }
     },
     showAnswer: function(){
         $('answer').set('text', this.current.answer);
