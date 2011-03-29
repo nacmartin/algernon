@@ -25,6 +25,9 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
+    filters:
+        cssrewrite: ~
+        closure:    ~
 
 # Doctrine Configuration
 doctrine:
@@ -37,7 +40,6 @@ doctrine:
                 dbname:   %database_name%
                 user:     %database_user%
                 password: %database_password%
-                charset:              UTF8
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
@@ -45,7 +47,7 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    AlgernonLeitnerBundle: ~
+                    AlgernonLeitner: ~
 
 # Swiftmailer Configuration
 swiftmailer:

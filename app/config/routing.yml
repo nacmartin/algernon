@@ -1,5 +1,5 @@
 _homepage:
-    resource: "@AlgernonLeitnerBundle/Controller/DefaultController.php"
+    resource: "@AlgernonLeitner/Controller/DefaultController.php"
     type:     annotation
 
 

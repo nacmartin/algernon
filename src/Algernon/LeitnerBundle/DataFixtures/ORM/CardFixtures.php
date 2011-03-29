@@ -17,28 +17,22 @@ class CardFixtures implements FixtureInterface
         $em->persist($session);
 
         $deck = new Deck();
-        $deck->setName('Deutsch - Español');
+        $deck->setName('Deutsch - English');
 
         $em->persist($deck);
 
-        $aufwachsen = new Card();
-        $aufwachsen->setQuestion('aufwachsen');
-        $aufwachsen->setAnswer('crecer');
-        $aufwachsen->setDeck($deck);
-
-        $ausbuergern = new Card();
-        $ausbuergern->setQuestion('ausbürguern');
-        $ausbuergern->setAnswer('crecer');
-        $ausbuergern->setDeck($deck);
-
-        $einbüergern = new Card();
-        $einbüergern->setQuestion('einbürguern');
-        $einbüergern->setAnswer('crecer');
-        $einbüergern->setDeck($deck);
-
-        $em->persist($aufwachsen);
-        $em->persist($ausbuergern);
-        $em->persist($einbüergern);
+        $row = 1;
+        if (($handle = fopen("deutsch-english.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                $num = count($data);
+                $card = new Card();
+                $card->setQuestion($data[0]);
+                $card->setAnswer($data[2]);
+                $card->setDeck($deck);
+                $em->persist($card);
+            }
+            fclose($handle);
+        }
 
         $em->flush();
     }

@@ -24,6 +24,10 @@ cp -r VERSION /tmp/Symfony/
 cd /tmp/Symfony
 sudo rm -rf app/cache/* app/logs/* .git*
 chmod 777 app/cache app/logs
+
+# DS_Store cleanup
+find . -name .DS_Store | xargs rm -rf -
+
 cd ..
 # avoid the creation of ._* files
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
