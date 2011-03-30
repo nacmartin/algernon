@@ -54,7 +54,6 @@ class DefaultController extends Controller
         $cards = $query->getResult();
         foreach ($cards as $card) {
             $card->setLevel($card->getLevel() +1);
-            print_r($card->getId());
             $em->persist($card);
         }
         $em->flush();
