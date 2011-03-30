@@ -47,6 +47,7 @@ doctrine:
         entity_managers:
             default:
                 mappings:
+                    FOSUser: ~
                     AlgernonLeitner: ~
 
 # Swiftmailer Configuration
@@ -59,3 +60,11 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+fos_user:
+    db_driver: orm
+    provider_key: main
+    class:
+        model:
+            user: Algernon\LeitnerBundle\Entity\User
+

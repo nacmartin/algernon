@@ -2,4 +2,10 @@ _homepage:
     resource: "@AlgernonLeitner/Controller/DefaultController.php"
     type:     annotation
 
+fos_user_security:
+    resource: @FOSUser/Resources/config/routing/security.xml
+
+fos_user_user:
+    resource: @FOSUser/Resources/config/routing/user.xml
+    prefix: /user
 
